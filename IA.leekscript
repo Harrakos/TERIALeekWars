@@ -1,0 +1,114 @@
+var array = [1,1,2,3,5,8,13,21];
+var array1 = [1,1,2,3,5,8,13,21];
+
+
+// Ceci est un code d'exemple très basique :
+
+// On prend le pistolet
+if(getTurn() == 1){
+	setWeapon(WEAPON_PISTOL); // Attention : coûte 1 PT
+}
+
+// On récupère l'ennemi le plus proche
+
+var enemy = getNearestEnemy();
+
+// On avance vers l'ennemi
+var myCells = getReachableCells(getCell(),getMP());
+var enemyCells = getReachableCells(getCell(enemy), getMP(enemy));
+
+for (var i = 0; i < count(myCells); i++) {
+	for (var j = 0; j < count(enemyCells); j++) {
+		if (lineOfSight(myCells[i], enemyCells[j])) {
+			remove(myCells, i);
+		}
+	}
+}
+for (var i = 0; i < count(myCells); i++) {
+	mark(myCells[i], COLOR_BLUE);
+}
+
+
+if(canUseWeapon(enemy)){
+	handleShoot(enemy);
+	moveTowardCell(myCells[0]);
+	
+}else{
+	moveToward(enemy);
+	handleBonus(enemy);
+	if(canUseWeapon(enemy)){
+		handleShoot(enemy);
+	}
+	
+}
+
+// On essaye de lui tirer dessus !
+
+function handleShoot(e){
+	//if(getLife() > getTotalLife()/2){
+		shoot(e, 2);
+		if(canUseChip(CHIP_ICE, e)){
+			useChip(CHIP_ICE, e);
+		}
+	/*}else{
+		if(canUseChip(CHIP_BANDAGE, getEntity())){
+			useChip(CHIP_BANDAGE, getEntity());
+		}
+		shoot(e, 2);
+	//}*/
+
+}
+
+function shoot(e,nbShoot){
+	for (var i = 0; i < nbShoot; i++){
+		useWeapon(e);
+	}	 
+}
+
+function handleBonus(e){
+	if(getPathLength(getCell(), getCell(e)) <= getWeaponMaxRange(getWeapon()) + getMP(e)){
+	   if(getCooldown(CHIP_PROTEIN) == 0)  //on peut utiliser la puce
+    	useChip(CHIP_PROTEIN, getEntity());
+		if(getCooldown(CHIP_HELMET) == 0)  //on peut utiliser la puce
+			useChip(CHIP_HELMET, getEntity());
+	}
+}
+
+function getReachableCells(cell, mp){
+	var cellsReachable = [cell];
+	
+	var voisinsTemp = cellsReachable;
+	var voisinsTemp2 = [];
+
+	
+	markText(cell, mp , COLOR_RED);
+	for(var k = mp; k > 0; k--){
+		debug(voisinsTemp);
+		for(var l = 0; l < count(voisinsTemp); l++){
+			var result = getvoisins(voisinsTemp[l], cellsReachable, k);
+			pushAll(voisinsTemp2,result);
+		}
+		pushAll(cellsReachable, voisinsTemp2);
+		voisinsTemp = voisinsTemp2;
+		voisinsTemp2 = [];
+	}
+	return cellsReachable;
+}
+
+function getvoisins(cell, voisins, mp){
+	var arrayTemp = []
+	for(var i = -1; i <= 1; i++){
+		for(var j = -1; j <= 1 ; j++){
+			if(i == 0 or j == 0){
+				var cellVoisin = getCellFromXY(getCellX(cell)+ i, getCellY(cell) + j);
+				if(search(voisins, cellVoisin) == null and !isObstacle(cellVoisin)){
+					markText(cellVoisin, mp - 1 , COLOR_GREEN);
+					//mark(cellVoisin, COLOR_GREEN);
+					push(arrayTemp, cellVoisin);
+				}				
+			}
+		}
+	}
+	return arrayTemp;
+}
+
