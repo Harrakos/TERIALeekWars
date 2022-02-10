@@ -6,8 +6,10 @@ with open("resultat.json") as jsonFile:
     jsonFile.close()
 
 fight = jsonObject['fight']['actions'][1]
-print(fight)
+winner = jsonObject['winner']
 
+print(fight)
+print(winner)
 
 # LEEKSCRIPT
 file = open('IA.leekscript')
