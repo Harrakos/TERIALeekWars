@@ -1,0 +1,12 @@
+/bin/
+/logs/
+/ai/
+leekscript.jar
+generator.jar
+.gradle/
+.classpath
+.project
+.settings
+build/
+bin/
+.vscode

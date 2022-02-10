@@ -1,0 +1,10 @@
+*.class
+.gradle/
+.classpath
+.settings
+build/
+*.jar
+.project
+/ai/
+/bin/
+.vscode/
