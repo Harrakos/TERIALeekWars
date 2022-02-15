@@ -2,12 +2,12 @@ var array = [1,1,2,3,5,8,13,21];
 var array1 = [1,1,2,3,5,8,13,21];
 
 // Getters for collect system states
+var enemy = getNearestEnemy();
 
 //info of our leek
 
 getAbsoluteShield();
 getRelativeShield();
-getChips();
 getEffects();
 getCell();
 getLife();
@@ -17,10 +17,16 @@ getNearestEnemy();
 getPassiveEffects();
 getResistance();
 getWeapon();
+canUseWeapon(enemy);
+var tabChips = getChips();
+
+
+for(var i=0; i<count(tabChips); i++){
+	getCooldown(tabChips[i]);
+}
 
 //info of enemy leek
 
-var enemy = getNearestEnemy();
 
 getAbsoluteShield(enemy);
 getRelativeShield(enemy);
@@ -36,10 +42,11 @@ getResistance(enemy);
 getWeapon(enemy);
 
 //info on map 
-
-
-
-getObstacles();
+var myLeek = getEntity();
+getObstacles(enemy, myLeek);
+getCellDistance();
+getPath(myLeek, enemy);
+lineOfSight(getCell(),getCell(enemy));
 
 // On prend le pistolet
 if(getTurn() == 1){
