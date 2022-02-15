@@ -1,8 +1,45 @@
 var array = [1,1,2,3,5,8,13,21];
 var array1 = [1,1,2,3,5,8,13,21];
 
+// Getters for collect system states
 
-// Ceci est un code d'exemple très basique :
+//info of our leek
+
+getAbsoluteShield();
+getRelativeShield();
+getChips();
+getEffects();
+getCell();
+getLife();
+getMP();
+getTP();
+getNearestEnemy();
+getPassiveEffects();
+getResistance();
+getWeapon();
+
+//info of enemy leek
+
+var enemy = getNearestEnemy();
+
+getAbsoluteShield(enemy);
+getRelativeShield(enemy);
+getChips(enemy);
+getEffects(enemy);
+getCell(enemy);
+getLife(enemy);
+getMP(enemy);
+getTP(enemy);
+getNearestEnemy(enemy);
+getPassiveEffects(enemy);
+getResistance(enemy);
+getWeapon(enemy);
+
+//info on map 
+
+
+
+getObstacles();
 
 // On prend le pistolet
 if(getTurn() == 1){
@@ -11,7 +48,6 @@ if(getTurn() == 1){
 
 // On récupère l'ennemi le plus proche
 
-var enemy = getNearestEnemy();
 
 // On avance vers l'ennemi
 var myCells = getReachableCells(getCell(),getMP());
