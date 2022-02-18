@@ -1,0 +1,29 @@
+/**
+
+**/
+
+// Fichier contenant le tableau de renforcement. 
+//include("Tab");
+
+// Ceci est un code d'exemple très basique :
+// On prend le pistolet
+setWeapon(WEAPON_PISTOL); // Attention : coûte 1 PT
+
+// On récupère l'ennemi le plus proche
+var enemy = getNearestEnemy();
+var entity = getEntity(); 
+
+// On avance vers l'ennemi
+moveToward(enemy);
+
+// On essaye de lui tirer dessus !
+useWeapon(enemy);
+
+// Renvoie un entier en 1 et 2  
+//randInt(1, 2); 
+
+// Utiliser debug(""); pour connaitre les actions utilisé. 
+//var index = getPathLength(getCell(entity), getCell(enemy)); 
+var index = getPathLength(getCell(entity), getCell(enemy)); 
+debug("Index = " + index); 
+
