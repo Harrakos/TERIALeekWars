@@ -1,29 +1,86 @@
-/**
-
-**/
-
 // Fichier contenant le tableau de renforcement. 
 //include("Tab");
 
-// Ceci est un code d'exemple très basique :
-// On prend le pistolet
-setWeapon(WEAPON_PISTOL); // Attention : coûte 1 PT
-
-// On récupère l'ennemi le plus proche
+// Getters 
 var enemy = getNearestEnemy();
 var entity = getEntity(); 
-
-// On avance vers l'ennemi
-moveToward(enemy);
-
-// On essaye de lui tirer dessus !
-useWeapon(enemy);
-
-// Renvoie un entier en 1 et 2  
-//randInt(1, 2); 
+var enemyCell = getCell(enemy);
+var entityCell = getCell(entity); 
 
 // Utiliser debug(""); pour connaitre les actions utilisé. 
-//var index = getPathLength(getCell(entity), getCell(enemy)); 
-var index = getPathLength(getCell(entity), getCell(enemy)); 
-debug("Index = " + index); 
+var index = getPathLength(entityCell, enemyCell) * 16; 
+// Selectionner l'action en fonction du max... 
+var indexTP = index + randInt(0, 7);
+var indexMP = index + randInt(8, 15);
 
+// Tour Point 
+if(indexTP%16 == 0){ // Tirer un coup avec le pistol
+	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
+		setWeapon(WEAPON_PISTOL);
+	
+	useWeapon(enemy);
+}
+else if(indexTP%16 == 1){ // Tirer un coup avec le Machine Gun
+	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
+		setWeapon(WEAPON_MACHINE_GUN);
+	
+	useWeapon(enemy);
+}
+else if(indexTP%16 == 2){ // Tirer autant que posible avec le pistol
+	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
+		setWeapon(WEAPON_PISTOL);
+	
+	while(useWeapon(entity) == USE_SUCCESS){}
+}
+else if(indexTP%16 == 3){ // Tirer autant que possible avec le Machine Gun
+	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
+		setWeapon(WEAPON_MACHINE_GUN);
+	
+	while(useWeapon(entity) == USE_SUCCESS){}
+}
+else if(indexTP%16 == 4){ // Utiliser la puce CHIP_BANDAGE
+	useChip(CHIP_BANDAGE, entity); 
+}
+else if(indexTP%16 == 5){ // Utiliser la puce 
+	useChip(CHIP_BANDAGE, enemy);
+}
+else if(indexTP%16 == 6){ // Utiliser la puce 
+	useChip(CHIP_BANDAGE, enemy);
+}
+else if(indexTP%16 == 7){ // Utiliser la puce 
+	useChip(CHIP_BANDAGE, enemy);
+}
+else{
+	//PB lol.. 
+}
+
+// Move Point 
+if(indexMP%16 == 8){ // Avancer de 1 vers l'enemi
+	moveToward(enemy, 1);
+}
+else if(indexMP%16 == 9){ // Avancer de 2 vers l'enemi
+	moveToward(enemy, 2);
+}
+else if(indexMP%16 == 10){ // Avancer de 3 vers l'enemi
+	moveToward(enemy, 3);
+}
+else if(indexMP%16 == 11){ // Avancer autant que possible vers l'enemi
+	moveToward(enemy);
+}
+else if(indexMP%16 == 12){ // Séloigner de 1 de l'enemi
+	moveAwayFrom(enemy, 1); 
+}
+else if(indexMP%16 == 13){ // Séloigner de 2 de l'enemi
+	moveAwayFrom(enemy, 2); 
+}
+else if(indexMP%16 == 14){ // Séloigner de 3 de l'enemi
+	moveAwayFrom(enemy, 3); 
+}
+else if(indexMP%16 == 15){ // Séloigner autant que possible de l'enemi
+	moveAwayFrom(enemy); 
+}
+else {
+	// Problème lol... 
+}
+
+debug(index + "/" + indexTP + "/" + indexMP ); 

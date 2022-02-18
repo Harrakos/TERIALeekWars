@@ -29,9 +29,9 @@
             "strength": 500,
             "tp": 10,
             "mp": 3,
-            "cell": 123,
-            "weapons": [37, 47],
-            "chips": [29]
+            "cell": 12,
+            "weapons": [37, 38],
+            "chips": [1, 2, 3, 19]
         }
     ],
     [

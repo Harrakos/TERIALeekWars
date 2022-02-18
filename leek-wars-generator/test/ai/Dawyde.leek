@@ -1,8 +1,6 @@
 // basic.leek
 var enemy = getNearestEnemy();
 
-debug("Dawyde" + getWeapons());
-
 if (count(getWeapons())) {
 	setWeapon(getWeapons()[0]);
 }

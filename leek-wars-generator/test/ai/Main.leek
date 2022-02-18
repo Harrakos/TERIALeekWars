@@ -83,8 +83,4 @@ else {
 	// Problème lol... 
 }
 
-
-// Renvoie un entier en 1 et 2  
-//	randInt(1, 2); 
-
-debug("index = " + index + " indexTP = " + indexTP + " indexMP = " + indexMP ); 
+debug(index + "/" + indexTP + "/" + indexMP ); 
