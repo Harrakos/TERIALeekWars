@@ -11,3 +11,5 @@ if (count(getWeapons())) {
 moveToward(enemy);
 
 useWeapon(enemy);
+
+debug("NTM"); 
