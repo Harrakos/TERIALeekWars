@@ -5,12 +5,7 @@ with open("resultat2.json") as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
 
-fight = jsonObject['fight']['actions'][1]
-winner = jsonObject['winner']
-logs = jsonObject['logs']['0']#['1']
-logTest = jsonObject['logs']['0']["11"]
-
-#print(logTest)
+logs = jsonObject['logs']['0']
 
 sortedLogs = collections.OrderedDict(sorted(logs.items()))
 

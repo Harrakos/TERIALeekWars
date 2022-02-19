@@ -18,4 +18,4 @@ var enemy = getNearestEnemy();
 moveToward(enemy);
 
 // On essaye de lui tirer dessus !
-useWeapon(enemy);
+//useWeapon(enemy);
