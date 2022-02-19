@@ -1,11 +1,15 @@
 // Fichier contenant le tableau de renforcement. 
-//include("Tab.leek");
+// include("Tab")
+global lossLife = getLife(); 
+global lastIndexMP = 0; 
 
 // Getters 
 var enemy = getNearestEnemy();
 var entity = getEntity(); 
 var enemyCell = getCell(enemy);
 var entityCell = getCell(entity); 
+
+var enemyLife = getLife(enemy); 
 
 // Utiliser debug(""); pour connaitre les actions utilisé. 
 var index = getPathLength(entityCell, enemyCell) * 16; 
@@ -41,14 +45,14 @@ else if(indexTP%16 == 3){ // Tirer autant que possible avec le Machine Gun
 else if(indexTP%16 == 4){ // Utiliser la puce CHIP_BANDAGE
 	useChip(CHIP_BANDAGE, entity); 
 }
-else if(indexTP%16 == 5){ // Utiliser la puce 
-	useChip(CHIP_BANDAGE, enemy);
+else if(indexTP%16 == 5){ // Utiliser la puce CHIP_SHOCK
+	useChip(CHIP_SHOCK, enemy);
 }
-else if(indexTP%16 == 6){ // Utiliser la puce 
-	useChip(CHIP_BANDAGE, enemy);
+else if(indexTP%16 == 6){ // Utiliser la puce CHIP_PEBBLE
+	useChip(CHIP_PEBBLE, enemy);
 }
-else if(indexTP%16 == 7){ // Utiliser la puce 
-	useChip(CHIP_BANDAGE, enemy);
+else if(indexTP%16 == 7){ // Utiliser la puce CHIP_ICE
+	useChip(CHIP_ICE, enemy);
 }
 else{
 	//PB lol.. 
@@ -83,4 +87,12 @@ else {
 	// Problème lol... 
 }
 
-debug(index + "/" + indexTP + "/" + indexMP ); 
+var lossLifeVar = lossLife; 
+var usefullTP = enemyLife - getLife(enemy); 
+var usefullMP = lossLifeVar - getLife(); 
+
+lossLife - getLife(); 
+
+debug(indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
+
+lastIndexMP = indexMP; 
