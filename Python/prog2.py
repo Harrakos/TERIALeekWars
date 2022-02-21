@@ -1,14 +1,16 @@
 import json
-import collections
 
-with open("resultat2.json") as jsonFile:
+with open("scenarioTrain.json") as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
 
-logs = jsonObject['logs']['0']
+print(jsonObject["random_seed"])
 
-sortedLogs = collections.OrderedDict(sorted(logs.items()))
+jsonObject["random_seed"] = 12
 
-for log in sortedLogs: 
-    rl = str(sortedLogs[log][0][2])
-    print(rl)
+print(jsonObject["random_seed"])
+
+with open('scenarioTrain.json', 'w') as f:
+    json.dump(jsonObject, f)
+
+
