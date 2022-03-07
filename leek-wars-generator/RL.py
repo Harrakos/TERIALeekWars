@@ -5,7 +5,16 @@ import random
 import collections
 import numpy as np
 
-nbFight = 1000
+
+print ("This is the name of the script: ", sys.argv[0])
+print ("Number of arguments: ", len(sys.argv))
+print ("The arguments are: " , str(sys.argv))
+
+if(len(sys.argv) != 2):
+    print("Utilisation : RL.py nombreDeCombats")
+    exit(1)
+
+nbFight = int(sys.argv[1]) 
 tabRL = np.zeros(1500)
 
 for i in range(nbFight) : 

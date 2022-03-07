@@ -1,0 +1,2 @@
+var enemy = getNearestEnemy();
+moveToward(enemy);

@@ -1,7 +1,40 @@
 // Fichier contenant le tableau de renforcement. 
-// include("Tab")
+include("Tab")
+
 global lossLife = getLife(); 
 global lastIndexMP = 0; 
+
+function bestActionTP(index){
+	var bestIndexTP = index; 
+	var valueOfIndex = tab[index]; 
+	
+	for(var i=index; i<=index+7; i++)
+		if(valueOfIndex < tab[i]){
+			bestIndexTP = i; 
+			valueOfIndex = tab[i]; 
+		}
+	
+	if(valueOfIndex == 0)
+		bestIndexTP = index + randInt(0, 7);
+			
+	return bestIndexTP; 
+}
+
+function bestActionMP(index){
+	var bestIndexMP = index+8; 
+	var valueOfIndex = tab[index]; 
+	
+	for(var i=index+8; i<=index+15; i++)
+		if(valueOfIndex < tab[i]){
+			bestIndexMP = i; 
+			valueOfIndex = tab[i]; 
+		}
+	
+	if(valueOfIndex == 0)
+		bestIndexMP = index + randInt(8, 15);
+			
+	return bestIndexMP; 
+}
 
 // Getters 
 var enemy = getNearestEnemy();
@@ -14,8 +47,10 @@ var enemyLife = getLife(enemy);
 // Utiliser debug(""); pour connaitre les actions utilisé. 
 var index = getPathLength(entityCell, enemyCell) * 16; 
 // Selectionner l'action en fonction du max... 
-var indexTP = index + randInt(0, 7);
-var indexMP = index + randInt(8, 15);
+var indexTP = bestActionTP(index); //index + randInt(0, 7);
+var indexMP = bestActionMP(index); //index + randInt(8, 15);
+
+debug("indexTP : " + indexTP + " / indexMP : " + indexMP); 
 
 // Tour Point 
 if(indexTP%16 == 0){ // Tirer un coup avec le pistol
@@ -34,13 +69,13 @@ else if(indexTP%16 == 2){ // Tirer autant que posible avec le pistol
 	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
 		setWeapon(WEAPON_PISTOL);
 	
-	while(useWeapon(entity) == USE_SUCCESS){}
+	while(useWeapon(enemy) == USE_SUCCESS){}
 }
 else if(indexTP%16 == 3){ // Tirer autant que possible avec le Machine Gun
 	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
 		setWeapon(WEAPON_MACHINE_GUN);
 	
-	while(useWeapon(entity) == USE_SUCCESS){}
+	while(useWeapon(enemy) == USE_SUCCESS){}
 }
 else if(indexTP%16 == 4){ // Utiliser la puce CHIP_BANDAGE
 	useChip(CHIP_BANDAGE, entity); 
@@ -93,6 +128,6 @@ var usefullMP = lossLifeVar - getLife();
 
 lossLife - getLife(); 
 
-debug(indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
+//debug(indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
 
 lastIndexMP = indexMP; 
