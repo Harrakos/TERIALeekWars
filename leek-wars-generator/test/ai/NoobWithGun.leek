@@ -1,0 +1,7 @@
+setWeapon(WEAPON_PISTOL); // Attention : coûte 1 PT
+
+var enemy = getNearestEnemy();
+
+moveToward(enemy);
+
+useWeapon(enemy);
