@@ -110,18 +110,16 @@ function vectorisation(){
 	var vecteur = "";
 
 	//Différence de vie entre les 2 joueurs
-	(getLife(entity) > getLife(enemy)) ? vecteur+="1" : vecteur+="0";
+	(getLife(entity) > getLife(enemy)) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	//Ligne de vue entre les deux joueurs
-	(lineOfSight(getCell(),getCell(enemy))) ? vecteur+="1" : vecteur+="0";
+	(lineOfSight(getCell(),getCell(enemy))) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	//Utilisation de l'arme sur l'adversaire
-	(canUseWeapon(enemy)) ? vecteur+="1" : vecteur+="0";
-	
+	(canUseWeapon(enemy)) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	//Disponibilité des chips
 	var tabChips = getChips();
 	for(var i=0; i<count(tabChips); i++){
-		(getCooldown(tabChips[i]) == 0) ? vecteur+="1" : vecteur+="0";
+		(getCooldown(tabChips[i]) == 0) ? vecteur= vecteur+"1" : vecteur= vecteur+"0";
 	}
-
 	debug(vecteur);
 	return vecteur;
 }
