@@ -93,6 +93,35 @@ var usefullMP = lossLifeVar - getLife();
 
 lossLife - getLife(); 
 
+vectorisation();
+
+
 debug(indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
 
 lastIndexMP = indexMP; 
+
+
+function vectorisation(){
+	var enemy = getNearestEnemy();
+	var entity = getEntity();
+	var enemyCell = getCell(enemy);
+	var entityCell = getCell(entity); 
+
+	var vecteur = "";
+
+	//Différence de vie entre les 2 joueurs
+	(getLife(entity) > getLife(enemy)) ? vecteur+="1" : vecteur+="0";
+	//Ligne de vue entre les deux joueurs
+	(lineOfSight(getCell(),getCell(enemy))) ? vecteur+="1" : vecteur+="0";
+	//Utilisation de l'arme sur l'adversaire
+	(canUseWeapon(enemy)) ? vecteur+="1" : vecteur+="0";
+	
+	//Disponibilité des chips
+	var tabChips = getChips();
+	for(var i=0; i<count(tabChips); i++){
+		(getCooldown(tabChips[i]) == 0) ? vecteur+="1" : vecteur+="0";
+	}
+
+	debug(vecteur);
+	return vecteur;
+}
