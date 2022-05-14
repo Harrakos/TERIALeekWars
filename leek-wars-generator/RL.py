@@ -89,17 +89,16 @@ for i in range(nbFight) :
             f.write("push(tabRl,"+str(elem)+"); \n")
 
         f.close()
+    
+    print("--------------------------------------------------------------")
+    print("// Tableau de renforcement")
+    print("global tab = [];")
+    print(tabAssociatif)
+    print(tabRL)
+
 
    
 
 
 
-print("--------------------------------------------------------------")
-print("// Tableau de renforcement")
-print("global tab = [];")
-print(tabAssociatif)
-print(tabRL)
-
-for t in tabAssociatif:
-    print(tabAssociatif[t])
 
