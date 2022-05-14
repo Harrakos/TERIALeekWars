@@ -12,7 +12,7 @@ var entityCell = getCell(entity);
 var enemyLife = getLife(enemy); 
 
 // Utiliser debug(""); pour connaitre les actions utilisé. 
-var index = getPathLength(entityCell, enemyCell) * 16; 
+var index = 0 // getPathLength(entityCell, enemyCell) * 16; 
 // Selectionner l'action en fonction du max... 
 var indexTP = index + randInt(0, 7);
 var indexMP = index + randInt(8, 15);
@@ -95,8 +95,7 @@ lossLife - getLife();
 
 vectorisation();
 
-
-debug(indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
+debug(vectorisation() +"/"+indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
 
 lastIndexMP = indexMP; 
 
@@ -120,6 +119,5 @@ function vectorisation(){
 	for(var i=0; i<count(tabChips); i++){
 		(getCooldown(tabChips[i]) == 0) ? vecteur= vecteur+"1" : vecteur= vecteur+"0";
 	}
-	debug(vecteur);
 	return vecteur;
 }
