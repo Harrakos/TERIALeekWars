@@ -63,7 +63,7 @@ for i in range(nbFight) :
     for log in sortedLogs: 
         rl = str(sortedLogs[log][0][2])
         rl = rl.split('/')
-        print(rl)
+        print(log)
         #tabRL[rl[0]] = int(rl[1])
         if rl[0] not in tabAssociatif :
             tabAssociatif[rl[0]] = freeIndex
@@ -79,17 +79,28 @@ for i in range(nbFight) :
         #tabRL[int(rl[2])] += int(rl[3])
     
 
-    with open('test/ai/Tab.leek', 'w') as f:
+    with open('test/ai/IA-train.leek', 'w') as f:
         f.write("var tabAssiocatif = []; \n")
         for elem in tabAssociatif:
             f.write("tabAssiocatif["+str(elem)+"] = "+str(tabAssociatif[elem])+"; \n")
 
         f.write("var tabRL = []; \n")
         for elem in tabRL :
-            f.write("push(tabRl,"+str(elem)+"); \n")
-
+            f.write("push(tabRL,"+str(elem)+"); \n")
+        f.write("\n")
+        f.write("\n")
+        f.write("\n")
+        with open('test/ai/IA-train_Script.leek',"r") as script:
+            for line in script.readlines():
+                f.write(line)
+            script.close()
         f.close()
+
+
+
     
+
+
     print("--------------------------------------------------------------")
     print("// Tableau de renforcement")
     print("global tab = [];")
