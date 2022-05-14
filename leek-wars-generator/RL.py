@@ -57,7 +57,7 @@ for i in range(nbFight) :
     duration = resultat["duration"]
     execution_time = resultat["execution_time"]
 
-    print("Combat " + str(i + 1) + " : Winner -> " + winnerName + " // Durée : " + str(duration) + " tours // Temps : " +  str(execution_time / 10000000) + " sec")
+    print("Combat " + str(i + 1) + " : Winner -> " + winnerName + " // Duree : " + str(duration) + " tours // Temps : " +  str(execution_time / 10000000) + " sec")
     
 
     for log in sortedLogs: 
