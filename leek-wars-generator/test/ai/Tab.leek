@@ -7,7 +7,7 @@ tabAssiocatif[0101111] = 4;
 tabAssiocatif[0101101] = 5; 
 tabAssiocatif[0001101] = 6; 
 tabAssiocatif[1101111] = 7; 
-var tabRL = []; 
+global tabRL = []; 
 push(tabRl,140); 
 push(tabRl,0); 
 push(tabRl,131); 
