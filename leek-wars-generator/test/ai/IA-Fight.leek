@@ -1,9 +1,10 @@
 // Fichier contenant le tableau de renforcement. 
-include("Tab")
+
+include("Tab");
 
 global lossLife = getLife(); 
 global lastIndexMP = 0; 
-
+/*
 function bestActionTP(index){
 	var bestIndexTP = index; 
 	var valueOfIndex = tab[index]; 
@@ -33,6 +34,47 @@ function bestActionMP(index){
 	if(valueOfIndex == 0)
 		bestIndexMP = index + randInt(8, 15);
 			
+	return bestIndexMP; 
+}
+*/
+
+function bestActionTP(index){
+	var bestIndexTP = index; 
+	var cmpt = 0
+	var t = []; 
+	
+	for(var i=index; i<=index+7; i++){
+		cmpt = cmpt + tabRl[i];
+		push(t, cmpt)
+	}
+	if(cmpt == 8) // Tous les états sont à 1
+		return index + randInt(0, 7);
+	var val = randInt(0, cmpt)
+	for (var i in t) {
+		if (val<=i) {
+			return bestIndexTP + search(t, i);
+		}
+	}		
+			
+	return bestIndexTP; 
+}
+
+function bestActionMP(index){
+	var bestIndexMP = index+8; 
+	var cmpt = 0
+	var t = [];
+	for(var i=index+8; i<=index+15; i++){
+		cmpt = cmpt + tabRl[i];
+		push(t, cmpt)
+	}
+	if(cmpt == 8) // Tous les états sont à 1
+		return index + randInt(8, 15);
+	var val = randInt(0, cmpt)
+	for (var i in t) {
+		if (val<=i) {
+			return bestIndexMP + search(t, i);
+		}
+	}		
 	return bestIndexMP; 
 }
 
