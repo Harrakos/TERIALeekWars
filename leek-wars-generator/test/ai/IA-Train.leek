@@ -1,175 +1,226 @@
 var tabAssiocatif = []; 
-tabAssiocatif[0001111] = 0; 
-tabAssiocatif[0111101] = 1; 
-tabAssiocatif[1111110] = 2; 
-tabAssiocatif[1001111] = 3; 
+tabAssiocatif[1001110] = 0; 
+tabAssiocatif[0001111] = 1; 
+tabAssiocatif[1111111] = 2; 
+tabAssiocatif[1111110] = 3; 
 tabAssiocatif[0001101] = 4; 
-tabAssiocatif[0111111] = 5; 
-tabAssiocatif[1111111] = 6; 
-tabAssiocatif[1101110] = 7; 
-tabAssiocatif[0101111] = 8; 
-tabAssiocatif[1111101] = 9; 
+tabAssiocatif[1001111] = 5; 
+tabAssiocatif[0101111] = 6; 
+tabAssiocatif[0101101] = 7; 
+tabAssiocatif[1101110] = 8; 
+tabAssiocatif[1101101] = 9; 
+tabAssiocatif[1101111] = 10; 
+tabAssiocatif[0111111] = 11; 
+tabAssiocatif[0111101] = 12; 
 var tabRL = []; 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,43); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,4); 
-push(tabRL,194); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,21); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,42); 
-push(tabRL,111); 
-push(tabRL,146); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,21); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,18); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
-push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,125); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,90); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,48); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,127); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,104); 
+push(tabRL,150); 
+push(tabRL,3); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,509); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,48); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,22); 
+push(tabRL,1); 
+push(tabRL,47); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,0); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
+push(tabRL,1); 
 
 
 
@@ -182,96 +233,123 @@ var enemy = getNearestEnemy();
 var entity = getEntity(); 
 var enemyCell = getCell(enemy);
 var entityCell = getCell(entity); 
-
 var enemyLife = getLife(enemy); 
+ 
 
 // Utiliser debug(""); pour connaitre les actions utilisé. 
-var index = 0 // getPathLength(entityCell, enemyCell) * 16; 
+//var index = 0 // getPathLength(entityCell, enemyCell) * 16; 
 // Selectionner l'action en fonction du max... 
-var indexTP = index + randInt(0, 7);
-var indexMP = index + randInt(8, 15);
+var indexTP = 3;
+var info = "";
 
-// Tour Point 
-if(indexTP%16 == 0){ // Tirer un coup avec le pistol
-	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
-		setWeapon(WEAPON_PISTOL);
+var nbactions = 16
+
+
+var vector = vectorisation();
+
+
+var check = 0;
+for(var v:var puissance in tabAssiocatif) { 
+	if(v == vector){
+		check = 1;
+	}
+}
+
+if(check ==  0){
+	var rando = randInt(0, nbactions-1);
+	indexTP = rando;
+	info = "creation d'un nouveau vecteur";
+}else{
+	info = "incrémentation du vecteur"
+	var index = tabAssiocatif[vector];
+	var sum = [];
+	for(var i = 0; i < nbactions; i++){
+		for(var j = 0; j<tabRL[index*nbactions+i]; j++){
+			push(sum, i);
+		}
+	}
+	var rando = randInt(0, count(sum)-1);
+	indexTP = sum[rando];
+	info = "incrémentation d'une action "
+
+
+}
+	// Tour Point 
+	if(indexTP == 0){ // Tirer un coup avec le pistol
+		if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
+			setWeapon(WEAPON_PISTOL);
+		useWeapon(enemy);
+	}
+	else if(indexTP == 1){ // Tirer un coup avec le Machine Gun
+		if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
+			setWeapon(WEAPON_MACHINE_GUN);
+		useWeapon(enemy);
+	}
+	else if(indexTP== 2){ // Tirer autant que posible avec le pistol
+		if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
+			setWeapon(WEAPON_PISTOL);
+		while(useWeapon(enemy) == USE_SUCCESS){}
+	}
+	else if(indexTP == 3){ // Tirer autant que possible avec le Machine Gun
+		if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
+			setWeapon(WEAPON_MACHINE_GUN);
+		while(useWeapon(enemy) == USE_SUCCESS){}
+	}
+	else if(indexTP == 4){ // Utiliser la puce CHIP_BANDAGE
+		useChip(CHIP_BANDAGE, entity); 
+	}
+	else if(indexTP == 5){ // Utiliser la puce CHIP_SHOCK
+		useChip(CHIP_SHOCK, enemy);
+	}
+	else if(indexTP == 6){ // Utiliser la puce CHIP_PEBBLE
+		useChip(CHIP_PEBBLE, enemy);
+	}
+	else if(indexTP == 7){ // Utiliser la puce CHIP_ICE
+		useChip(CHIP_ICE, enemy);
+	}
+	if(indexTP == 8){ // Avancer de 1 vers l'enemi
+		moveToward(enemy, 1);
+	}
+	else if(indexTP == 9){ // Avancer de 2 vers l'enemi
+		moveToward(enemy, 2);
+	}
+	else if(indexTP == 10){ // Avancer de 3 vers l'enemi
+		moveToward(enemy, 3);
+	}
+	else if(indexTP == 11){ // Avancer autant que possible vers l'enemi
+		moveToward(enemy);
+	}
+	else if(indexTP == 12){ // Séloigner de 1 de l'enemi
+		moveAwayFrom(enemy, 1); 
+	}
+	else if(indexTP == 13){ // Séloigner de 2 de l'enemi
+		moveAwayFrom(enemy, 2); 
+	}
+	else if(indexTP == 14){ // Séloigner de 3 de l'enemi
+		moveAwayFrom(enemy, 3); 
+	}
+	else if(indexTP == 15){ // Séloigner autant que possible de l'enemi
+		moveAwayFrom(enemy); 
+	}
+	else {
+		// Problème lol... 
+	}
 	
-	useWeapon(enemy);
-}
-else if(indexTP%16 == 1){ // Tirer un coup avec le Machine Gun
-	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
-		setWeapon(WEAPON_MACHINE_GUN);
-	
-	useWeapon(enemy);
-}
-else if(indexTP%16 == 2){ // Tirer autant que posible avec le pistol
-	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
-		setWeapon(WEAPON_PISTOL);
-	
-	while(useWeapon(enemy) == USE_SUCCESS){}
-}
-else if(indexTP%16 == 3){ // Tirer autant que possible avec le Machine Gun
-	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
-		setWeapon(WEAPON_MACHINE_GUN);
-	
-	while(useWeapon(enemy) == USE_SUCCESS){}
-}
-else if(indexTP%16 == 4){ // Utiliser la puce CHIP_BANDAGE
-	useChip(CHIP_BANDAGE, entity); 
-}
-else if(indexTP%16 == 5){ // Utiliser la puce CHIP_SHOCK
-	useChip(CHIP_SHOCK, enemy);
-}
-else if(indexTP%16 == 6){ // Utiliser la puce CHIP_PEBBLE
-	useChip(CHIP_PEBBLE, enemy);
-}
-else if(indexTP%16 == 7){ // Utiliser la puce CHIP_ICE
-	useChip(CHIP_ICE, enemy);
-}
-else{
-	//PB lol.. 
-}
+
+
+
+
 
 // Move Point 
-if(indexMP%16 == 8){ // Avancer de 1 vers l'enemi
-	moveToward(enemy, 1);
-}
-else if(indexMP%16 == 9){ // Avancer de 2 vers l'enemi
-	moveToward(enemy, 2);
-}
-else if(indexMP%16 == 10){ // Avancer de 3 vers l'enemi
-	moveToward(enemy, 3);
-}
-else if(indexMP%16 == 11){ // Avancer autant que possible vers l'enemi
-	moveToward(enemy);
-}
-else if(indexMP%16 == 12){ // Séloigner de 1 de l'enemi
-	moveAwayFrom(enemy, 1); 
-}
-else if(indexMP%16 == 13){ // Séloigner de 2 de l'enemi
-	moveAwayFrom(enemy, 2); 
-}
-else if(indexMP%16 == 14){ // Séloigner de 3 de l'enemi
-	moveAwayFrom(enemy, 3); 
-}
-else if(indexMP%16 == 15){ // Séloigner autant que possible de l'enemi
-	moveAwayFrom(enemy); 
-}
-else {
-	// Problème lol... 
-}
+
 
 var lossLifeVar = lossLife; 
 var usefullTP = enemyLife - getLife(enemy); 
-var usefullMP = lossLifeVar - getLife(); 
-
 lossLife - getLife(); 
 
-vectorisation();
 
-debug(vectorisation() +"/"+indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
+debug(vectorisation() +"/"+indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + info); 
 
-lastIndexMP = indexMP; 
 
 
 function vectorisation(){
@@ -279,7 +357,6 @@ function vectorisation(){
 	var entity = getEntity();
 	var enemyCell = getCell(enemy);
 	var entityCell = getCell(entity); 
-
 	var vecteur = "";
 
 	//Différence de vie entre les 2 joueurs
@@ -291,7 +368,7 @@ function vectorisation(){
 	//Disponibilité des chips
 	var tabChips = getChips();
 	for(var i=0; i<count(tabChips); i++){
-		(getCooldown(tabChips[i]) == 0) ? vecteur= vecteur+"1" : vecteur= vecteur+"0";
+			(getCooldown(tabChips[i]) == 0) ? vecteur= vecteur+"1" : vecteur= vecteur+"0";
 	}
 	return vecteur;
 }

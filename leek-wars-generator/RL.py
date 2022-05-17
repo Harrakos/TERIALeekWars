@@ -20,6 +20,11 @@ tabRL = []
 
 freeIndex = 0
 
+    
+with open('test/ai/IA-train.leek', 'w') as f:
+    f.write("")
+    f.close()
+
 
 for i in range(nbFight) : 
     with open("test/scenario/scenarioTrain2.json") as jsonFile:
@@ -63,12 +68,12 @@ for i in range(nbFight) :
     for log in sortedLogs: 
         rl = str(sortedLogs[log][0][2])
         rl = rl.split('/')
-        print(log)
+        print(rl)
         #tabRL[rl[0]] = int(rl[1])
         if rl[0] not in tabAssociatif :
             tabAssociatif[rl[0]] = freeIndex
             for i in range(16):
-                tabRL.append(0)
+                tabRL.append(1)
             tabRL[(freeIndex*16)+int(rl[1])] = int(rl[2])
             freeIndex += 1
         else :
@@ -83,7 +88,6 @@ for i in range(nbFight) :
         f.write("var tabAssiocatif = []; \n")
         for elem in tabAssociatif:
             f.write("tabAssiocatif["+str(elem)+"] = "+str(tabAssociatif[elem])+"; \n")
-
         f.write("var tabRL = []; \n")
         for elem in tabRL :
             f.write("push(tabRL,"+str(elem)+"); \n")
