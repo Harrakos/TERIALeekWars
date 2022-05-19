@@ -1,0 +1,175 @@
+// Fichier contenant le tableau de renforcement. 
+
+include("Tab");
+
+global lossLife = getLife(); 
+global lastIndexMP = 0; 
+/*
+function bestActionTP(index){
+	var bestIndexTP = index; 
+	var valueOfIndex = tab[index]; 
+	
+	for(var i=index; i<=index+7; i++)
+		if(valueOfIndex < tab[i]){
+			bestIndexTP = i; 
+			valueOfIndex = tab[i]; 
+		}
+	
+	if(valueOfIndex == 0)
+		bestIndexTP = index + randInt(0, 7);
+			
+	return bestIndexTP; 
+}
+
+function bestActionMP(index){
+	var bestIndexMP = index+8; 
+	var valueOfIndex = tab[index]; 
+	
+	for(var i=index+8; i<=index+15; i++)
+		if(valueOfIndex < tab[i]){
+			bestIndexMP = i; 
+			valueOfIndex = tab[i]; 
+		}
+	
+	if(valueOfIndex == 0)
+		bestIndexMP = index + randInt(8, 15);
+			
+	return bestIndexMP; 
+}
+*/
+
+function bestActionTP(index){
+	var bestIndexTP = index; 
+	var cmpt = 0
+	var t = []; 
+	
+	for(var i=index; i<=index+7; i++){
+		cmpt = cmpt + tabRl[i];
+		push(t, cmpt)
+	}
+	if(cmpt == 8) // Tous les états sont à 1
+		return index + randInt(0, 7);
+	var val = randInt(0, cmpt)
+	for (var i in t) {
+		if (val<=i) {
+			return bestIndexTP + search(t, i);
+		}
+	}		
+			
+	return bestIndexTP; 
+}
+
+function bestActionMP(index){
+	var bestIndexMP = index+8; 
+	var cmpt = 0
+	var t = [];
+	for(var i=index+8; i<=index+15; i++){
+		cmpt = cmpt + tabRl[i];
+		push(t, cmpt)
+	}
+	if(cmpt == 8) // Tous les états sont à 1
+		return index + randInt(8, 15);
+	var val = randInt(0, cmpt)
+	for (var i in t) {
+		if (val<=i) {
+			return bestIndexMP + search(t, i);
+		}
+	}		
+	return bestIndexMP; 
+}
+
+// Getters 
+var enemy = getNearestEnemy();
+var entity = getEntity(); 
+var enemyCell = getCell(enemy);
+var entityCell = getCell(entity); 
+
+var enemyLife = getLife(enemy); 
+
+// Utiliser debug(""); pour connaitre les actions utilisé. 
+var index = getPathLength(entityCell, enemyCell) * 16; 
+// Selectionner l'action en fonction du max... 
+var indexTP = bestActionTP(index); //index + randInt(0, 7);
+var indexMP = bestActionMP(index); //index + randInt(8, 15);
+
+debug("indexTP : " + indexTP + " / indexMP : " + indexMP); 
+
+// Tour Point 
+if(indexTP%16 == 0){ // Tirer un coup avec le pistol
+	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
+		setWeapon(WEAPON_PISTOL);
+	
+	useWeapon(enemy);
+}
+else if(indexTP%16 == 1){ // Tirer un coup avec le Machine Gun
+	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
+		setWeapon(WEAPON_MACHINE_GUN);
+	
+	useWeapon(enemy);
+}
+else if(indexTP%16 == 2){ // Tirer autant que posible avec le pistol
+	if(getWeapon() == null or getWeapon() != WEAPON_PISTOL)
+		setWeapon(WEAPON_PISTOL);
+	
+	while(useWeapon(enemy) == USE_SUCCESS){}
+}
+else if(indexTP%16 == 3){ // Tirer autant que possible avec le Machine Gun
+	if(getWeapon() == null or getWeapon() != WEAPON_MACHINE_GUN)
+		setWeapon(WEAPON_MACHINE_GUN);
+	
+	while(useWeapon(enemy) == USE_SUCCESS){}
+}
+else if(indexTP%16 == 4){ // Utiliser la puce CHIP_BANDAGE
+	useChip(CHIP_BANDAGE, entity); 
+}
+else if(indexTP%16 == 5){ // Utiliser la puce CHIP_SHOCK
+	useChip(CHIP_SHOCK, enemy);
+}
+else if(indexTP%16 == 6){ // Utiliser la puce CHIP_PEBBLE
+	useChip(CHIP_PEBBLE, enemy);
+}
+else if(indexTP%16 == 7){ // Utiliser la puce CHIP_ICE
+	useChip(CHIP_ICE, enemy);
+}
+else{
+	//PB lol.. 
+}
+
+// Move Point 
+if(indexMP%16 == 8){ // Avancer de 1 vers l'enemi
+	moveToward(enemy, 1);
+}
+else if(indexMP%16 == 9){ // Avancer de 2 vers l'enemi
+	moveToward(enemy, 2);
+}
+else if(indexMP%16 == 10){ // Avancer de 3 vers l'enemi
+	moveToward(enemy, 3);
+}
+else if(indexMP%16 == 11){ // Avancer autant que possible vers l'enemi
+	moveToward(enemy);
+}
+else if(indexMP%16 == 12){ // Séloigner de 1 de l'enemi
+	moveAwayFrom(enemy, 1); 
+}
+else if(indexMP%16 == 13){ // Séloigner de 2 de l'enemi
+	moveAwayFrom(enemy, 2); 
+}
+else if(indexMP%16 == 14){ // Séloigner de 3 de l'enemi
+	moveAwayFrom(enemy, 3); 
+}
+else if(indexMP%16 == 15){ // Séloigner autant que possible de l'enemi
+	moveAwayFrom(enemy); 
+}
+else {
+	// Problème lol... 
+}
+
+var lossLifeVar = lossLife; 
+var usefullTP = enemyLife - getLife(enemy); 
+var usefullMP = lossLifeVar - getLife(); 
+
+lossLife - getLife(); 
+
+//debug(indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + usefullMP); 
+
+lastIndexMP = indexMP; 

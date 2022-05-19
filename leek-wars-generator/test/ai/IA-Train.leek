@@ -1,25 +1,25 @@
 var tabAssiocatif = []; 
-tabAssiocatif[1001110] = 0; 
+tabAssiocatif[1111111] = 0; 
+tabAssiocatif[0111111] = 0; 
+tabAssiocatif[1001111] = 0; 
 tabAssiocatif[0001111] = 1; 
-tabAssiocatif[1111111] = 2; 
-tabAssiocatif[1111110] = 3; 
-tabAssiocatif[0001101] = 4; 
-tabAssiocatif[1001111] = 5; 
-tabAssiocatif[0101111] = 6; 
-tabAssiocatif[0101101] = 7; 
-tabAssiocatif[1101110] = 8; 
-tabAssiocatif[1101101] = 9; 
-tabAssiocatif[1101111] = 10; 
-tabAssiocatif[0111111] = 11; 
-tabAssiocatif[0111101] = 12; 
+tabAssiocatif[0001101] = 1; 
+tabAssiocatif[0101111] = 1; 
+tabAssiocatif[1111110] = 1; 
+tabAssiocatif[1111101] = 2; 
+tabAssiocatif[1101111] = 2; 
 var tabRL = []; 
+push(tabRL,223); 
+push(tabRL,364); 
 push(tabRL,1); 
+push(tabRL,17); 
 push(tabRL,1); 
+push(tabRL,4); 
 push(tabRL,1); 
+push(tabRL,96); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,125); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -31,28 +31,30 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
+push(tabRL,10); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,0); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
+push(tabRL,8); 
+push(tabRL,49); 
 push(tabRL,1); 
+push(tabRL,2); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,90); 
+push(tabRL,32); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,48); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -67,7 +69,6 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,127); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -81,7 +82,6 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,0); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -94,9 +94,6 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,104); 
-push(tabRL,150); 
-push(tabRL,3); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -110,7 +107,6 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,0); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -129,7 +125,6 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,0); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -147,69 +142,6 @@ push(tabRL,1);
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
-push(tabRL,509); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,0); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,48); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,0); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,22); 
-push(tabRL,1); 
-push(tabRL,47); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,1); 
-push(tabRL,0); 
 push(tabRL,1); 
 push(tabRL,1); 
 push(tabRL,1); 
@@ -345,12 +277,34 @@ if(check ==  0){
 
 var lossLifeVar = lossLife; 
 var usefullTP = enemyLife - getLife(enemy); 
+var usefullRound = 0;
+if(usefullTP == 0){
+	usefullRound = 0;
+}else if(usefullTP < 10){
+	usefullRound = 1;
+}else if(usefullTP < 20){
+	usefullRound = 2;
+}else if(usefullTP < 30){
+	usefullRound = 3;
+}else if(usefullTP < 40){
+	usefullRound = 4;
+}else if(usefullTP < 50){
+	usefullRound = 5;
+}else if(usefullTP < 60){
+	usefullRound = 6;
+}else if(usefullTP < 70){
+	usefullRound = 7;
+}else if(usefullTP < 80){
+	usefullRound = 8;
+}else if(usefullTP < 90){
+	usefullRound = 9;
+}else{
+	usefullRound = 10;	
+}
 lossLife - getLife(); 
 
 
-debug(vectorisation() +"/"+indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + info); 
-
-
+debug(vectorisation() +"/"+indexTP + "/" + usefullRound + "/" + lastIndexMP + "/" + info); 
 
 function vectorisation(){
 	var enemy = getNearestEnemy();
@@ -358,7 +312,6 @@ function vectorisation(){
 	var enemyCell = getCell(enemy);
 	var entityCell = getCell(entity); 
 	var vecteur = "";
-
 	//Différence de vie entre les 2 joueurs
 	(getLife(entity) > getLife(enemy)) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	//Ligne de vue entre les deux joueurs

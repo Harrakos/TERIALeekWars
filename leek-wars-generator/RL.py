@@ -74,15 +74,14 @@ for i in range(nbFight) :
             tabAssociatif[rl[0]] = freeIndex
             for i in range(16):
                 tabRL.append(1)
-            tabRL[(freeIndex*16)+int(rl[1])] = int(rl[2])
-            freeIndex += 1
+            if int(rl[2]) == 0 :
+                tabRL[(freeIndex*16)+int(rl[1])] = 1
+            else:
+                tabRL[(freeIndex*16)+int(rl[1])] = int(rl[2])
+                freeIndex += 1
         else :
             tabRL[(tabAssociatif[rl[0]]*16)+int(rl[1])] += int(rl[2])
 
-
-        #tabRL[int(rl[0])] += int(rl[1])
-        #tabRL[int(rl[2])] += int(rl[3])
-    
 
     with open('test/ai/IA-train.leek', 'w') as f:
         f.write("var tabAssiocatif = []; \n")

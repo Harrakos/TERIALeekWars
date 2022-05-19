@@ -119,12 +119,34 @@ if(check ==  0){
 
 var lossLifeVar = lossLife; 
 var usefullTP = enemyLife - getLife(enemy); 
+var usefullRound = 0;
+if(usefullTP == 0){
+	usefullRound = 0;
+}else if(usefullTP < 10){
+	usefullRound = 1;
+}else if(usefullTP < 20){
+	usefullRound = 2;
+}else if(usefullTP < 30){
+	usefullRound = 3;
+}else if(usefullTP < 40){
+	usefullRound = 4;
+}else if(usefullTP < 50){
+	usefullRound = 5;
+}else if(usefullTP < 60){
+	usefullRound = 6;
+}else if(usefullTP < 70){
+	usefullRound = 7;
+}else if(usefullTP < 80){
+	usefullRound = 8;
+}else if(usefullTP < 90){
+	usefullRound = 9;
+}else{
+	usefullRound = 10;	
+}
 lossLife - getLife(); 
 
 
-debug(vectorisation() +"/"+indexTP + "/" + usefullTP + "/" + lastIndexMP + "/" + info); 
-
-
+debug(vectorisation() +"/"+indexTP + "/" + usefullRound + "/" + lastIndexMP + "/" + info); 
 
 function vectorisation(){
 	var enemy = getNearestEnemy();
@@ -132,7 +154,6 @@ function vectorisation(){
 	var enemyCell = getCell(enemy);
 	var entityCell = getCell(entity); 
 	var vecteur = "";
-
 	//Différence de vie entre les 2 joueurs
 	(getLife(entity) > getLife(enemy)) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	//Ligne de vue entre les deux joueurs
