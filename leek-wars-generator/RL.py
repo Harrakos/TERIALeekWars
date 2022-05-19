@@ -71,11 +71,14 @@ for i in range(nbFight) :
         print(rl)
         #tabRL[rl[0]] = int(rl[1])
         if rl[0] not in tabAssociatif :
+            print("dreeindex"+str(freeIndex))
             tabAssociatif[rl[0]] = freeIndex
             for i in range(16):
                 tabRL.append(1)
             if int(rl[2]) == 0 :
                 tabRL[(freeIndex*16)+int(rl[1])] = 1
+                freeIndex += 1
+
             else:
                 tabRL[(freeIndex*16)+int(rl[1])] = int(rl[2])
                 freeIndex += 1
