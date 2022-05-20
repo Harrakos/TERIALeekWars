@@ -105,6 +105,70 @@ if(check ==  0){
 	else if(indexTP == 15){ // Séloigner autant que possible de l'enemi
 		moveAwayFrom(enemy); 
 	}
+	
+	//--------------------------------------------------------------
+	// A VOIR //
+
+	// Utilise la chip pebble si possible
+	// A voir si je continue pour toutes les chips de dégats
+	else if(indexTP == 16){  
+		tryAndUseChip(CHIP_PEBBLE,enemy);
+	}
+	//Avance de 1
+	// Utilise la chip pebble si possible
+	else if(indexTP == 17){
+		moveToward(enemy,1);
+		tryAndUseChip(CHIP_PEBBLE,enemy);
+	}
+	//Avance de 2 
+	//Utilise la chip pebble si possible 
+	else if(indexTP == 18){
+		moveToward(enemy,2);
+		tryAndUseChip(CHIP_PEBBLE,enemy);
+	}
+	// Avance de 3 
+	// Utilise la chippe pebbele si possible 
+	else if(indexTP == 19){
+		moveToward(enemy,3);
+		tryAndUseChip(CHIP_PEBBLE,enemy);
+	}
+	//Avance de 1 
+	// Equipe PISTOLET et utilise une arme sur l'enemi
+	else if(indexTP == 20){
+		moveToward(enemy,1);
+		setAndUseWeapon_(WEAPON_PISTOL,enemy,true);
+	}
+	//Avance de 2 
+	// Equipe PISTOLET et utilise une arme sur l'enemi
+	else if(indexTP == 21){
+		moveToward(enemy,2);
+		setAndUseWeapon_(WEAPON_PISTOL,enemy,true);
+	} 
+	// Avance de 3
+	// Equipe PISTOLET et utilise une arme sur l'enemi
+	else if(indexTP == 22){
+		moveToward(enemy,3);
+		setAndUseWeapon_(WEAPON_PISTOL,enemy,true);
+	}
+	//Avance de 1 
+	// Equipe MACHINE GUN et utilise une arme sur l'enemi
+	else if(indexTP == 20){
+		moveToward(enemy,1);
+		setAndUseWeapon_(WEAPON_MACHINE_GUN,enemy,true);
+	}
+	//Avance de 2 
+	// Equipe MACHINE GUN et utilise une arme sur l'enemi
+	else if(indexTP == 21){
+		moveToward(enemy,2);
+		setAndUseWeapon_(WEAPON_MACHINE_GUN,enemy,true);
+	} 
+	// Avance de 3
+	// Equipe MACHINE GUN et utilise une arme sur l'enemi
+	else if(indexTP == 22){
+		moveToward(enemy,3);
+		setAndUseWeapon_(WEAPON_MACHINE_GUN,enemy,true);
+	}
+	//----------------------------------------------------------------
 	else {
 		// Problème lol... 
 	}
