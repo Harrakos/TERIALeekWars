@@ -1,5 +1,12 @@
 // Leek 301
 
+// On récupère l'ennemi le plus proche
+var enemy = getNearestEnemy();
+var me = getEntity();
+
+var isHurt = getLife() < getTotalLife();
+
+
 if (getLife() < (getTotalLife() * 0.20)) {
   if (!tryAndUseChip(CHIP_REGENERATION, me)) {
 	  tryAndUseChip(CHIP_THERAPY, me);
