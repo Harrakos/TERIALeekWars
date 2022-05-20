@@ -16,7 +16,7 @@ var enemyLife = getLife(enemy);
 var indexTP = 3;
 var info = "";
 
-var nbactions = 16
+var nbactions = 23
 
 
 var vector = vectorisation();
