@@ -1,0 +1,155 @@
+// Leek 301
+
+if (getLife() < (getTotalLife() * 0.20)) {
+  if (!tryAndUseChip(CHIP_REGENERATION, me)) {
+	  tryAndUseChip(CHIP_THERAPY, me);
+  	tryAndUseChip(CHIP_CURE, me);
+  	tryAndUseChip(CHIP_REMISSION, me);
+  }
+}
+
+var effet = getEffects();
+var souspoison = false;
+for (var i in effet) {
+	if(i[0]==13) {
+	souspoison=true;
+	}
+	if(souspoison){
+	useChip(CHIP_ANTIDOTE,me);}
+}
+//NoAlign(enemy);
+//UseAllWeaponBase(WEAPON_LIGHTNINGER, enemy, me);
+//UseAllWeaponBase(WEAPON_MAGNUM, enemy, me);
+//UseAllWeaponBase(WEAPON_AXE, enemy, me);
+// On avance vers l'ennemi
+//tryAndUseChip(CHIP_FLAME, enemy);
+moveToward(enemy);
+//moveAwayFrom(enemy);
+
+if (getTurn() % 5 === 1) { //armor shield
+  	tryAndUseChip(CHIP_ELEVATION, me);
+	tryAndUseChip(CHIP_SOLIDIFICATION, me);
+	//tryAndUseChip(CHIP_FERTILIZER,me);
+	summonPunyBulbFunc();
+}
+if (getTurn() % 5 === 2) {//armor shield vaccine
+  tryAndUseChip(CHIP_MOTIVATION, me);
+ // summonPunyBulbFunc2();
+  tryAndUseChip(CHIP_ARMOR, me);
+}
+if (getTurn() % 5 === 3) {//armor fortress vaccine
+  if (getLife() < (getTotalLife() * 0.5)) {
+    tryAndUseChip(CHIP_VACCINE, me);
+  }
+}
+if (getTurn() % 5 === 4) {
+  tryAndUseChip(CHIP_FORTRESS, me);
+  //summonPunyBulbFunc();//armor fortress vaccine
+}
+if (getTurn() % 5 === 0) {// fortress shield
+  tryAndUseChip(CHIP_SHIELD, me);
+}
+
+// On prend le pistolet
+if (getWeapon() == null) {
+  setWeapon(WEAPON_KATANA); // Attention : coûte 1 PT
+}
+
+if (!setAndUseWeapon_(WEAPON_KATANA, enemy, true)){
+	if (!setAndUseWeapon_(WEAPON_MAGNUM, enemy, true)) {
+		setAndUseWeapon_(WEAPON_RHINO, enemy, true);
+	}
+}
+
+if (getTurn() >= 2) {
+  //tryAndUseChip(CHIP_RAMPART, me);
+  if (getTurn() >= 3) {
+    //tryAndUseChip(CHIP_SHIELD, me);
+    tryAndUseChip(CHIP_WALL, me);
+  }
+  tryAndUseChip(CHIP_HELMET, me);
+}
+
+if (isHurt) {
+	tryAndUseChip(CHIP_THERAPY, me);
+  tryAndUseChip(CHIP_VACCINE, me);
+  tryAndUseChip(CHIP_CURE, me);
+  tryAndUseChip(CHIP_BANDAGE, me);
+}
+
+//useMaxChip_(CHIP_ROCK, enemy);
+//useMaxChip_(CHIP_ICE, enemy);
+//useMaxChip_(CHIP_SPARK,enemy);
+
+
+// On prend le pistolet
+if (getWeapon() != WEAPON_KATANA) {
+  setWeapon(WEAPON_KATANA); // Attention : coûte 1 PT
+}
+
+// Utilise un sort une fois si possible
+function tryAndUseChip(chip, leek) {
+	if (canUseChip(chip, leek)) {
+		useChip(chip,leek);
+		return true;
+	}
+	return false;
+}
+
+// Equipe et utilise une arme sur un ennemi
+function setAndUseWeapon_(weapon, enemy, doMax) {
+	if (canUseWeapon(weapon, enemy)) {
+		if (getWeapon() != weapon) {
+			setWeapon(weapon);
+		}// On essaye de lui tirer dessus !
+		useWeapon(enemy);
+		var lastTP = getTP();
+		while (doMax && lastTP >= getWeaponCost()) {
+		  useWeapon(enemy);
+		  if (getTP() == lastTP) {
+		  	break;
+		  }
+		  lastTP = getTP();
+		}
+		return true;
+	}
+}
+
+
+function summonPunyBulbFunc () {
+  var enemy = getNearestEnemy();
+  var me = getEntity();
+  var isHurt = getLife() < getTotalLife();
+  summon(CHIP_PUNY_BULB, (getCell() - 1), function() {
+
+		// On avance vers l'invocateur
+		moveToward(me);
+	  	tryAndUseChip(CHIP_PROTEIN, me);
+		tryAndUseChip(CHIP_HELMET, me);
+		tryAndUseChip(CHIP_STALACTITE,enemy);
+
+		
+	  //tryAndUseChip(CHIP_PEBBLE, enemy);
+
+		//useMaxChip_(CHIP_PEBBLE,enemy);
+	});
+}
+
+function summonPunyBulbFunc2 () {
+  var enemy = getNearestEnemy();
+  var me = getEntity();
+  var isHurt = getLife() < getTotalLife();
+  summon(CHIP_FIRE_BULB, (getCell() - 1), function() {
+
+		// On avance vers l'invocateur
+		moveToward(enemy);
+		tryAndUseChip(CHIP_DEVIL_STRIKE,enemy);
+
+		
+	  //tryAndUseChip(CHIP_PEBBLE, enemy);
+
+		//useMaxChip_(CHIP_PEBBLE,enemy);
+	});
+}
+
+
