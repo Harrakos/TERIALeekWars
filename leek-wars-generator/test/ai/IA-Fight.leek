@@ -192,13 +192,13 @@ if(check ==  0){
 	for(var v:var puissance in tabAssiocatif) { 
 		somme = 0;
         for (var i = 0; i < length(v); i++) {
-        	if (charAt(v, i)== "1" and charAt(vector, i) == "1") {
+        	if (charAt(v, i)==  charAt(vector, i) ) {
         		somme = somme +1;// Produit scalaire
         	}
         }
 		push(tabSomme, somme)// on met tous les produits scalaires dans un tab
     }
-	vector = tabAssiocatif[search(tabSomme, arrayMin(tabSomme))] // on cherche l'index du min
+	vector = tabAssiocatif[search(tabSomme, arrayMax(tabSomme))] // on cherche l'index du min
 }
 	 var index = tabAssiocatif[vector];
 	var sum = [];
