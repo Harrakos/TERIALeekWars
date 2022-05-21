@@ -69,16 +69,16 @@ if(check ==  0){
 		while(useWeapon(enemy) == USE_SUCCESS){}
 	}
 	else if(indexAction == 4){ // Utiliser la puce CHIP_BANDAGE
-		useChip(CHIP_BANDAGE, entity); 
+		tryAndUseChip(CHIP_BANDAGE, entity); 
 	}
 	else if(indexAction == 5){ // Utiliser la puce CHIP_SHOCK
-		useChip(CHIP_SHOCK, enemy);
+		tryAndUseChip(CHIP_SHOCK, enemy);
 	}
 	else if(indexAction == 6){ // Utiliser la puce CHIP_PEBBLE
-		useChip(CHIP_PEBBLE, enemy);
+		tryAndUseChip(CHIP_PEBBLE, enemy);
 	}
 	else if(indexAction == 7){ // Utiliser la puce CHIP_ICE
-		useChip(CHIP_ICE, enemy);
+		tryAndUseChip(CHIP_ICE, enemy);
 	}
 	if(indexAction == 8){ // Avancer de 1 vers l'enemi
 		moveToward(enemy, 1);
@@ -104,7 +104,6 @@ if(check ==  0){
 	else if(indexAction == 15){ // Séloigner autant que possible de l'enemi
 		moveAwayFrom(enemy); 
 	}
-/*
 	// Utilise la chip pebble si possible
 	// A voir si je continue pour toutes les chips de dégats
 	else if(indexAction == 16){  
@@ -261,7 +260,7 @@ if(check ==  0){
 	else {
 		// Problème lol... 
 	}
-	*/
+
 
 
 
@@ -309,43 +308,15 @@ function vectorisation(){
 	var vecteur = "";
 	//Différence de vie entre les 2 joueurs
 	(getLife(entity) > 2000) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1800) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1700) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1600) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(entity) > 1500) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1400) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1300) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1200) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 1100) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(entity) > 1000) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 900) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 800) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 700) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 600) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(entity) > 500) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 400) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 300) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(entity) > 200) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(entity) > 100) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 
 	(getLife(enemy) > 2000) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1800) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1700) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1600) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(enemy) > 1500) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1400) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1300) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1200) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 1100) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(enemy) > 1000) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 900) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 800) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 700) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 600) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(enemy) > 500) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 400) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 300) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
-	(getLife(enemy) > 200) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 	(getLife(enemy) > 100) ? vecteur= vecteur+"1" : vecteur = vecteur+"0";
 
 
