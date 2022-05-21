@@ -16,7 +16,7 @@ var enemyLife = getLife(enemy);
 var indexAction = 3;
 var info = "";
 
-var nbactions = 23
+var nbactions = 43;
 
 var vector = vectorisation();
 
@@ -33,7 +33,7 @@ if(check ==  0){
 	indexAction = rando;
 	info = "creation d'un nouveau vecteur";
 }else{
-	info = "incrémentation du vecteur"
+	info = "incrementation du vecteur"
 	var index = tabAssiocatif[vector];
 	var sum = [];
 	for(var i = 0; i < nbactions; i++){
@@ -43,7 +43,7 @@ if(check ==  0){
 	}
 	var rando = randInt(0, count(sum)-1);
 	indexAction = sum[rando];
-	info = "incrémentation d'une action "
+	info = "incrementation d'une action "
 
 
 }
@@ -104,169 +104,164 @@ if(check ==  0){
 	else if(indexAction == 15){ // Séloigner autant que possible de l'enemi
 		moveAwayFrom(enemy); 
 	}
-	
-	//--------------------------------------------------------------
-	// A VOIR //
-
+/*
 	// Utilise la chip pebble si possible
 	// A voir si je continue pour toutes les chips de dégats
-	else if(indexTP == 16){  
+	else if(indexAction == 16){  
 		tryAndUseChip(CHIP_PEBBLE,enemy);
 	}
 	//Avance de 1
 	// Utilise la chip pebble si possible
-	else if(indexTP == 17){
+	else if(indexAction == 17){
 		moveToward(enemy,1);
 		tryAndUseChip(CHIP_PEBBLE,enemy);
 	}
 	//Avance de 2 
 	//Utilise la chip pebble si possible 
-	else if(indexTP == 18){
+	else if(indexAction == 18){
 		moveToward(enemy,2);
 		tryAndUseChip(CHIP_PEBBLE,enemy);
 	}
 	// Avance de 3 
 	// Utilise la chippe pebbele si possible 
-	else if(indexTP == 19){
+	else if(indexAction == 19){
 		moveToward(enemy,3);
 		tryAndUseChip(CHIP_PEBBLE,enemy);
 	}
 	//Avance de 1 
 	// Equipe PISTOLET et utilise une arme sur l'enemi
-	else if(indexTP == 20){
+	else if(indexAction == 20){
 		moveToward(enemy,1);
 		setAndUseWeapon_(WEAPON_PISTOL,enemy,true);
 	}
 	//Avance de 2 
 	// Equipe PISTOLET et utilise une arme sur l'enemi
-	else if(indexTP == 21){
+	else if(indexAction == 21){
 		moveToward(enemy,2);
 		setAndUseWeapon_(WEAPON_PISTOL,enemy,true);
 	} 
 	// Avance de 3
 	// Equipe PISTOLET et utilise une arme sur l'enemi
-	else if(indexTP == 22){
+	else if(indexAction == 22){
 		moveToward(enemy,3);
 		setAndUseWeapon_(WEAPON_PISTOL,enemy,true);
 	}
 	//Avance de 1 
 	// Equipe MACHINE GUN et utilise une arme sur l'enemi
-	else if(indexTP == 20){
+	else if(indexAction == 20){
 		moveToward(enemy,1);
 		setAndUseWeapon_(WEAPON_MACHINE_GUN,enemy,true);
 	}
 	//Avance de 2 
 	// Equipe MACHINE GUN et utilise une arme sur l'enemi
-	else if(indexTP == 21){
+	else if(indexAction == 21){
 		moveToward(enemy,2);
 		setAndUseWeapon_(WEAPON_MACHINE_GUN,enemy,true);
 	} 
 	// Avance de 3
 	// Equipe MACHINE GUN et utilise une arme sur l'enemi
-	else if(indexTP == 22){
+	else if(indexAction == 22){
 		moveToward(enemy,3);
 		setAndUseWeapon_(WEAPON_MACHINE_GUN,enemy,true);
 	}
-	//----------------------------------------------------------------
-	//----------------------------------------------------------------
 	// Mettre les stats de mon perso pour que ces actions soient possible //
 	//Tirer un coup au magnum
-	else if(indexTP == 23){
+	else if(indexAction == 23){
 		if(getWeapon() == null or getWeapon() != WEAPON_MAGNUM)
 			setWeapon(WEAPON_MAGNUM);
 		useWeapon(enemy);
 	}
 	//Tirer un coup au rhino 
-	else if(indexTP == 24){
+	else if(indexAction == 24){
 		if(getWeapon() == null or getWeapon() != WEAPON_RHINO)
 			setWeapon(WEAPON_RHINO);
 		useWeapon(enemy);
 	}
 	// Taper un coup au katana
-	else if(indexTP == 25){
+	else if(indexAction == 25){
 		if(getWeapon() == null or getWeapon() != WEAPON_KATANA)
 			setWeapon(WEAPON_KATANA);
 		useWeapon(enemy);
 	}
 	// Tirer un coup de lightninger
-	else if(indexTP == 26){
+	else if(indexAction == 26){
 		if(getWeapon() == null or getWeapon() != WEAPON_LIGHTNINGER)
 			setWeapon(WEAPON_LIGHTNINGER);
 		useWeapon(enemy);
 	}
 	// Utiliser la chip cure
-	else if(indexTP == 27){
+	else if(indexAction == 27){
 		tryAndUseChip(CHIP_CURE,entity);
 	}
 	//utiliser la chip vaccine
-	else if(indexTP == 28){
+	else if(indexAction == 28){
 		tryAndUseChip(CHIP_VACCINE,entity);
 	}
 	//Utiliser la chip regeneration
-	else if(indexTP == 29){
+	else if(indexAction == 29){
 		tryAndUseChip(CHIP_REGENERATION,entity);
 	}
 	//Utiliser la chip remission
-	else if(indexTP == 30){
+	else if(indexAction == 30){
 		tryAndUseChip(CHIP_REMISSION,entity);
 	}
 	//Utiliser la chip elevation
-	else if(indexTP == 31){
+	else if(indexAction == 31){
 		tryAndUseChip(CHIP_ELEVATION,entity);
 	}
 	// Utiliser la chip therapy
-	else if(indexTP == 32){
+	else if(indexAction == 32){
 		tryAndUseChip(CHIP_THERAPY,entity);
 	}
 	//Utiliser la chip helmet
-	else if(indexTP == 33){
+	else if(indexAction == 33){
 		tryAndUseChip(CHIP_HELMET,entity);
 	}
 	//Utiliser la chip wall
-	else if(indexTP == 34){
+	else if(indexAction == 34){
 		tryAndUseChip(CHIP_WALL,entity);
 	}
 	//Utiliser la chip shield
-	else if(indexTP == 35){
+	else if(indexAction == 35){
 		tryAndUseChip(CHIP_SHIELD,entity);
 	}
 	//utiliser la chip armor
-	else if(indexTP == 36){
+	else if(indexAction == 36){
 		tryAndUseChip(CHIP_ARMOR,entity);
 	}
 	//Utiliser la chip forteress
-	else if(indexTP == 37){
+	else if(indexAction == 37){
 		tryAndUseChip(CHIP_FORTRESS,entity);
 	}
 	//Utiliser la chip proteine
-	else if(indexTP == 38){
+	else if(indexAction == 38){
 		tryAndUseChip(CHIP_PROTEIN,entity);
 	}
 	//Utiliser la chip solidification
-	else if(indexTP == 39){
+	else if(indexAction == 39){
 		tryAndUseChip(CHIP_SOLIDIFICATION,entity)
 	}
 	//Utiliser la chip steroid
-	else if(indexTP == 40){
+	else if(indexAction == 40){
 		tryAndUseChip(CHIP_STEROID,entity);
 	}
 	//Utiliser adrenaline
-	else if(indexTP == 41){
+	else if(indexAction == 41){
 		tryAndUseChip(CHIP_ADRENALINE,entity);
 	}
 	//Utiliser liberation
-	else if(indexTP == 42){
+	else if(indexAction == 42){
 		tryAndUseChip(CHIP_LIBERATION,entity);
 	}
 	//Utiliser la chip antidote
-	else if(indexTP == 43){
+	else if(indexAction == 43){
 		tryAndUseChip(CHIP_ANTIDOTE,entity);
 	}
 	//-----------------------------------------------------------------
 	else {
 		// Problème lol... 
 	}
-	
+	*/
 
 
 
@@ -364,4 +359,30 @@ function vectorisation(){
 			(getCooldown(tabChips[i]) == 0) ? vecteur= vecteur+"1" : vecteur= vecteur+"0";
 	}
 	return vecteur;
+}
+
+function tryAndUseChip(chip, leek) {
+	if (canUseChip(chip, leek)) {
+		useChip(chip,leek);
+		return true;
+	}
+	return false;
+}
+
+function setAndUseWeapon_(weapon, enemy, doMax) {
+	if (canUseWeapon(weapon, enemy)) {
+		if (getWeapon() != weapon) {
+			setWeapon(weapon);
+		}// On essaye de lui tirer dessus !
+		useWeapon(enemy);
+		var lastTP = getTP();
+		while (doMax && lastTP >= getWeaponCost()) {
+		  useWeapon(enemy);
+		  if (getTP() == lastTP) {
+		  	break;
+		  }
+		  lastTP = getTP();
+		}
+		return true;
+	}
 }
