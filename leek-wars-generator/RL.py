@@ -71,25 +71,26 @@ with alive_bar(nbFight) as bar:
         for log in sortedLogs: 
             rl = str(sortedLogs[log][0][2])
             rl = rl.split('/')
-            print(rl)
+            #print(rl)
             #tabRL[rl[0]] = int(rl[1])
 
+            maxCpt = 0
+            maxVector = ""
             if rl[0] not in tabAssociatif :
-                if freeIndex == 100 :
+                if freeIndex == 130 :
+                    for k, v in tabAssociatif.items():
+                        cpt = 0
+                        print(k +" , "+ rl[0])
+                        for i in range(len(k)):
+                            if k[i] == rl[0][i]:
+                                cpt += 1
+                        if cpt > maxCpt:
+                            maxVector = k
+                            maxCpt = cpt
 
-
-                    # TODO faire le truc
-
-
-
-
-
-
-
-
-
+                    tabRL[(tabAssociatif[maxVector]*44)+int(rl[1])] += int(rl[2])
                 else :
-                    tabAssociatif[rl[0]] = freeIndex
+                    tabAssociatif[str(rl[0])] = freeIndex
                     for i in range(44):
                         tabRL.append(1)
                     if int(rl[2]) == 0 :
@@ -125,8 +126,8 @@ with alive_bar(nbFight) as bar:
         print("--------------------------------------------------------------")
         print("// Tableau de renforcement")
         print("global tab = [];")
-        #print(tabAssociatif)
-        #print(tabRL)
+        print(tabAssociatif)
+        print(tabRL)
         bar()
 
 
