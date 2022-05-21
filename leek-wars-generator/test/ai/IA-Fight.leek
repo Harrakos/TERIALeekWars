@@ -187,8 +187,19 @@ for(var v:var puissance in tabAssiocatif) {
 }
 
 if(check ==  0){
-	indexTP = -1;
-}else{
+	var somme = 0;
+	var tabSomme = []
+	for(var v:var puissance in tabAssiocatif) { 
+		somme = 0;
+        for (var i = 0; i < length(v); i++) {
+        	if (charAt(v, i)== "1" and charAt(vector, i) == "1") {
+        		somme = somme +1;// Produit scalaire
+        	}
+        }
+		push(tabSomme, somme)// on met tous les produits scalaires dans un tab
+    }
+	vector = tabAssiocatif[search(tabSomme, arrayMin(tabSomme))] // on cherche l'index du min
+}
 	 var index = tabAssiocatif[vector];
 	var sum = [];
 	for(var i = 0; i < nbactions; i++){
@@ -199,7 +210,7 @@ if(check ==  0){
 	var rando = randInt(0, count(sum)-1);
 	indexTP = sum[rando];
 	info = "ALLEZ ";
-}
+
 
 	// Tour Point 
 	if(indexTP == 0){ // Tirer un coup avec le pistol
