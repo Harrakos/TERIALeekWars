@@ -1,0 +1,13 @@
+var tabAssiocatif = []; 
+    tabAssiocatif[1111111] = 0; 
+    tabAssiocatif[0001111] = 1; 
+    tabAssiocatif[1101111] = 2; 
+    
+var tabRL = []; 
+    push(tabRL,223); 
+    push(tabRL,364); 
+    # ... 
+    push(tabRL,1062); 
+    push(tabRL,92);
+
+    
